@@ -1,6 +1,6 @@
 ### 目录结构
 
-![目录结构](http://i.imgur.com/TWCHYYK.jpg)
+![目录结构](http://oo5edb6t9.bkt.clouddn.com/14918125570107.jpg)
 
 ### 详细说明
 
@@ -49,3 +49,4 @@
 `/usr/src`：内核源代码默认的放置目录。
 
 `var`：这个目录中存放着在不断扩充着的东西。
+

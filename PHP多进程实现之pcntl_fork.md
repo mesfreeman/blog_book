@@ -62,7 +62,7 @@
 
 **不好意思**，`MySQL server has gone away`，MySQL 不干了！！！
 
-![异常](http://i.imgur.com/RsPMmAL.jpg)
+![异常](http://oo5edb6t9.bkt.clouddn.com/14918121450717.jpg)
 
 **官方说法**是这样子的：当子进程任务完成并结束的时候，会自己关闭数据库连接，下一进程再进行数据库操作的时候发现失去了数据库连接，因为就出现了`MySQL server has gone away`的错误。详细说明 [MySQL server has gone away错误](http://php.net/manual/zh/function.pcntl-fork.php)
 
@@ -96,4 +96,5 @@
 
 > 以上就是快把我坑哭的经历，希望能帮助到一些人。因为在此过程中查阅了好多地方，竟然都是抄来官方例子说事，真心不知道他们有没有试过。
 
-在此次大数据爬取过程中还遇到了好多好多的问题，烧死了无数的脑细胞，等有时间更新到下篇文章中，我先哭会~~
+在此次大数据爬取过程中还遇到了好多好多的问题，烧死了无数的脑细胞，等有时间更新到下篇文章中，我先哭会~
+

@@ -172,6 +172,10 @@ MySQL数据库是做为PHP程序猿最为常用的数据库，是一个基础。
     UPDATE tableName SET columnName = 'xx' WHERE ……
     # 查看
     SELECT * FROM tableName;
+    
+### 导出数据表查询结果到文件
+
+    mysql -uxxx -pxxx databaseName -e "SELECT * FROM tableName WHERE Id > 20;" > "a.txt"
 
 ## 表字段操作
 

@@ -14,13 +14,9 @@
 
 ### 开启Apache缓存涉及的`expires`模块
 
-* 通过`php -m`查看该模块是否已经开启。如果没有开启，进入`Apache`的`mod-enabled`目录，建立软连接，如下：
+只需要一条命令而已，如下：
 
-    ![开启Expires模块](http://i.imgur.com/KGRzhSb.jpg)
-
-    ![软链接](http://i.imgur.com/YnxXhSx.jpg)
-
-* 开启该模块，`vi expires.load`,去掉前面的`#`号
+    sudo a2enmod expires
 
 ### 配置`expires`模块
 
@@ -47,7 +43,7 @@
 
 写入配置：
 
-![写入配置](http://i.imgur.com/AjeDLwc.jpg)
+![写入配置](http://oo5edb6t9.bkt.clouddn.com/14918135235940.jpg)
 
 ### 在`mod-enabled`目录建立软链接
 
@@ -57,15 +53,13 @@
 
 执行`sudo service apache2 restart`,当看到如下所示，表示服务器已重启。
 
-![restarr Apache](http://i.imgur.com/t8iQtUG.jpg)
+![](http://oo5edb6t9.bkt.clouddn.com/14918135989346.jpg)
 
 ### 测试开启是否成功
 
-![测试结果](http://i.imgur.com/T1pTMkI.png)
+![测试结果](http://oo5edb6t9.bkt.clouddn.com/14918136179135.png)
 
 由上图可以看出，该`css`文件被缓存了一个月，也就是上面配置时的30天，所以开启缓存成功。
-
-***
 
 ### 拓展
 
@@ -118,3 +112,4 @@
             ExpiresDefault A10800    # 3 小时
         </FilesMatch>
     </IfModule>
+

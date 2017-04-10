@@ -204,7 +204,7 @@ Shell 是一个用C语言编写的程序，它是用户使用Linux的桥梁。Sh
 
 下表列出了常用的算术运算符，假定变量 a 为 10，变量 b 为 20：
 
-![算术运算符](http://i.imgur.com/DmeyBD4.jpg)
+![](http://oo5edb6t9.bkt.clouddn.com/14918083996091.jpg)
 
 注意：条件表达式要放在方括号之间，并且要有空格，例如: [$a==$b] 是错误的，必须写成 [ $a == $b ]
 
@@ -212,31 +212,31 @@ Shell 是一个用C语言编写的程序，它是用户使用Linux的桥梁。Sh
 
 下表列出了常用的关系运算符，假定变量 a 为 10，变量 b 为 20：
 
-![关系运算符](http://i.imgur.com/3HylGOF.jpg)
+![](http://oo5edb6t9.bkt.clouddn.com/14918084562619.jpg)
 
 #### 布尔运算符
 
 下表列出了常用的布尔运算符，假定变量 a 为 10，变量 b 为 20：
 
-![布尔运算符](http://i.imgur.com/DcJ54a2.jpg)
+![](http://oo5edb6t9.bkt.clouddn.com/14918084872137.jpg)
 
 #### 逻辑运算符
 
 以下介绍 Shell 的逻辑运算符，假定变量 a 为 10，变量 b 为 20:
 
-![逻辑运算符](http://i.imgur.com/hBgPsgb.jpg)
+![](http://oo5edb6t9.bkt.clouddn.com/14918085082043.jpg)
 
 #### 字符串运算符
 
 下表列出了常用的字符串运算符，假定变量 a 为 "abc"，变量 b 为 "efg"：
 
-![字符串运算符](http://i.imgur.com/b9OD9uF.jpg)
+![](http://oo5edb6t9.bkt.clouddn.com/14918085270372.jpg)
 
 #### 文件测试运算符
 
 文件测试运算符用于检测 Unix 文件的各种属性：
 
-![文件测试运算符](http://i.imgur.com/ZmRaeSV.jpg)
+![](http://oo5edb6t9.bkt.clouddn.com/14918085483449.jpg)
 
 ### test命令
 
@@ -377,4 +377,5 @@ shell2.sh
 
 ## 结语
 
-不积跬步，无以至千里，学无止境，初探shell就这样子结束了，以后有用到其它方面的，继续积累。
+不积跬步，无以至千里，学无止境，初探shell就这样子结束了，以后有用到其它方面的，继续积累。积累。
+

@@ -4,8 +4,7 @@
 
 安装成功之后会看到如下界面：
 
-![界面](http://i.imgur.com/7NhyRY7.jpg)
-
+![界面](http://oo5edb6t9.bkt.clouddn.com/14918127034852.jpg)
 
 ### 使用Xshell连接Ubuntu
 
@@ -17,21 +16,21 @@
 
 1. 按下`ctrl + alt + F1`进入系统命令行界面，如下图所示：
 
-    ![命令行界面](http://i.imgur.com/DVbUuoj.jpg)
+    ![命令行界面](http://oo5edb6t9.bkt.clouddn.com/14918127628290.jpg)
 
 2. 在命令行界面输入`ifconfig -a`查看虚拟`ip`地址，如下图所示：
 
-    ![ip](http://i.imgur.com/NePwun0.jpg)
+    ![ip](http://oo5edb6t9.bkt.clouddn.com/14918127942608.jpg)
 
 用Xshell连接虚拟机：
 
 1. 打开Xshell，新建会话，如下图所示：
 
-    ![会话](http://i.imgur.com/39h9UdP.jpg)
+    ![会话](http://oo5edb6t9.bkt.clouddn.com/14918128506181.jpg)
 
 2. 连接虚拟机，如果出现下面的情况，可能是因为没有安装或开启SSH服务
 
-    ![错误情况](http://i.imgur.com/jDe4htY.jpg)
+    ![错误情况](http://oo5edb6t9.bkt.clouddn.com/14918128863468.jpg)
 
 3. 安装SSH服务
    
@@ -47,8 +46,9 @@
 
 6. 尝试再次连接，如果出现如下界面，则表示连接成功。
 
-    ![连接成功](http://i.imgur.com/pGaqhTX.jpg) 
+    ![连接成功](http://oo5edb6t9.bkt.clouddn.com/14918129329289.jpg)
 
 至此，大功告成！
 
 > 亲测可用，如果有什么问题欢迎在下方给我留言
+

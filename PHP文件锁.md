@@ -65,12 +65,12 @@ PHP文件锁的使用涉及以下几个函数：
 
 A进程运行
 
-![A进程](http://i.imgur.com/oNcWqBZ.jpg)
+![](http://oo5edb6t9.bkt.clouddn.com/14918120069916.jpg)
 
 B进程等待
 
-![B进程](http://i.imgur.com/zGUqiDN.jpg)
-
+![](http://oo5edb6t9.bkt.clouddn.com/14918120263720.jpg)
 
 [1]:http://php.net/manual/zh/function.fopen.php
 [2]:http://php.net/manual/zh/function.flock.php
+

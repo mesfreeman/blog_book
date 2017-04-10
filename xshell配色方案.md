@@ -34,7 +34,7 @@
 
 效果图：
 
-![](http://i.imgur.com/Gz5Sw8e.jpg)
+![](http://oo5edb6t9.bkt.clouddn.com/14918095320033.jpg)
 
 ### Double`s Two
 
@@ -64,7 +64,7 @@
 
 效果图：
 
-![](http://i.imgur.com/Q8SkXwc.jpg)
+![](http://oo5edb6t9.bkt.clouddn.com/14918095514316.jpg)
 
 ### Double`s Three
 
@@ -94,4 +94,5 @@
 
 效果图：
 
-![](http://i.imgur.com/9hYfaW3.jpg)
+![](http://oo5edb6t9.bkt.clouddn.com/14918095684147.jpg)
+

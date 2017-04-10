@@ -13,11 +13,11 @@
 
 打开Fiddler并开启capturing，如下图：
 
-![图片](http://i.imgur.com/2LoY7jn.jpg)
+![](http://oo5edb6t9.bkt.clouddn.com/14918100763832.jpg)
 
 在浏览器中访问你需要抓包的网站，即可看到抓到的数据包信息如下图：
 
-![图片](http://i.imgur.com/7JiKjgV.jpg)
+![](http://oo5edb6t9.bkt.clouddn.com/14918101119749.jpg)
 
 ### 断点调试
 
@@ -37,13 +37,13 @@ Fiddler最强大的功能莫过于设置断点了，设置好断点后，你可�
 2. 打开该登录界面，输入错误的帐号、密码提交登录，会话中断
 3. 修改帐号密码后，点击`Run to Completion`登录成功
 
-![断点调试](http://i.imgur.com/dWQqGZS.png)
+![断点调试](http://oo5edb6t9.bkt.clouddn.com/14918101427515.jpg)
 
 ### 模拟登录分析
 
 当我们要模拟登录一个网站的时候，就需要对该网站做一个全面的分析，比如:是否有cookie产生？是否需要referer？登录时需要提交哪些参数等。那么我们就可以通过Fiddler抓包得到，如下图抓包分析河南理工大学图书馆登录过程：
 
-![模拟登录](http://i.imgur.com/YinK6sZ.jpg)
+![模拟登录](http://oo5edb6t9.bkt.clouddn.com/14918101928299.jpg)
 
 说明：从抓包的数据我们可以看出以下信息：
 
@@ -57,7 +57,7 @@ Fiddler最强大的功能莫过于设置断点了，设置好断点后，你可�
 
 所谓重定向就是将页面原本需要调用的资源指向其他资源（可以是其它资源路径也可以是本地的一个文件资源）。比如当我们开发一个网站的时候将样式文件放在本地，再将请求重定向到本地，就可以完成样式的本地调试，不用提交到服务了。如下图：
 
-![重定向](http://i.imgur.com/51t2CTA.jpg)
+![重定向](http://oo5edb6t9.bkt.clouddn.com/14918102380195.jpg)
 
 ### 移动端抓包
 
@@ -65,9 +65,9 @@ Fiddler最强大的功能莫过于设置断点了，设置好断点后，你可�
 
 1. 打开Fiddler->Tools->Fiddler Options，选中`Decrpt HTTPS traffic`（支持截获HTTPS请求），选中`Allow remote computers to connect`（允许别的机器把HTTP、HTTPS请求发送到Fiddler上来），如下图：
 
-    ![图片](http://i.imgur.com/BL4XCPy.jpg)
+    ![](http://oo5edb6t9.bkt.clouddn.com/14918102988016.jpg)  
 
-    ![图片](http://i.imgur.com/qSfxvj1.jpg)
+    ![](http://oo5edb6t9.bkt.clouddn.com/14918103229384.jpg)
 
     **记得端口号为：8888**
 
@@ -75,11 +75,11 @@ Fiddler最强大的功能莫过于设置断点了，设置好断点后，你可�
     * 记手机与电脑处于同一个网段
     * 设置无理代码，ip为电脑ip，端口为：8888，如下图：
         
-        ![设置代理](http://i.imgur.com/0NlL3NX.jpg)
+        ![设置代理](http://oo5edb6t9.bkt.clouddn.com/14918113971300.jpg)
     
     * 在你的手机浏览器中输入`http://上面的ip:8888`，点击`FiddlerRoot certificate`安装证书并添加至信任列表，如下图：
     
-        ![安装证书](http://i.imgur.com/YqMqQEi.jpg)
+        ![安装证书](http://oo5edb6t9.bkt.clouddn.com/14918114271665.jpg)
 
 3. 打开你想抓包的手机应用，然后就会在Fiddler里看到抓到的数据了
 
@@ -88,3 +88,4 @@ Fiddler最强大的功能莫过于设置断点了，设置好断点后，你可�
 ## 拓展
 
 Fiddler工具相当强大，这里只介绍了常用的功能，还有很多功能没有介绍，如果有兴趣可以自行百度，了解它的神秘面纱。
+
