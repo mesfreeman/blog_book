@@ -10,7 +10,7 @@ Ubuntu svn的安装特别简单，只需要一条命令即可，`sudo apt-get in
 ### 1. 创建SVN仓库目录
 
     mkdir -p /data/svn
-    
+
 ### 2. 创建项目版本库
     
     svnadmin create /data/svn/project01

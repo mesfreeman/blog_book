@@ -135,7 +135,7 @@ MySQL数据库是做为PHP程序猿最为常用的数据库，是一个基础。
 
     CREATE TABLE newTableName like oldTableName;
 
-### Copy源表结构及数据并生成新表
+### Copy源表结构及数据并生成新表（注意这种方式会丢失索引）
 
     CREATE TABLE newTableName SELECT * FROM oldTableName;
     
