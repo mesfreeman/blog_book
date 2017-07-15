@@ -10,7 +10,7 @@ Ubuntu svn的安装特别简单，只需要一条命令即可，`sudo apt-get in
 ### 1. 创建SVN仓库目录
 
     mkdir -p /data/svn
-
+    
 ### 2. 创建项目版本库
     
     svnadmin create /data/svn/project01
@@ -115,6 +115,25 @@ svn add 文件或目录，如
 更改`post-commit`文件权限为777
 
     chmod 777 post-commit
+
+### 配置TortoiseSVN客户端，使它支持自动更新文件ID属性
+
+找到TortoiseSVN客户端的配置文件，将`enable-auto-props=no`改为`enable-auto-props=yes`，然后在`[auto-props]`下面添加如下代码：
+
+    *.php = svn:keywords=Author Date Id Rev URL; svn:eol-style=LF
+    *.html = svn:keywords=Author Date Id Rev URL; svn:eol-style=LF
+    *.css = svn:keywords=Author Date Id Rev URL; svn:eol-style=LF
+    *.js = svn:keywords=Author Date Id Rev URL; svn:eol-style=LF
+    *.sh = svn:keywords=Author Date Id Rev URL; svn:eol-style=LF; svn:executable
+    *.py = svn:keywords=Author Date Id Rev URL; svn:eol-style=native; svn:executable
+
+如图：
+
+![](http://oo5edb6t9.bkt.clouddn.com/15001079646675.jpg)
+
+![](http://oo5edb6t9.bkt.clouddn.com/15001079730757.jpg)
+
+注意：只有在提交新的文件里加入`$Id$`时才会生效，如果这个文件已经提交到SVN上了，想要再加入 ID 属性，则可以通过命令行的方式`svn propset svn:keywords "Id" test.php`。
     
 > 大功告成～
 
