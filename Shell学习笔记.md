@@ -51,7 +51,7 @@ Shell 是一个用C语言编写的程序，它是用户使用Linux的桥梁。Sh
     echo $your_name
     echo "${your_name} very good !"
 
-#### 重定义yojg 
+#### 重定义变量 
 
     your_name="double.he"
     echo $your_name
