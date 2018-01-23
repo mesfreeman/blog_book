@@ -9,7 +9,7 @@
 * `Expires`：HTTP/1.0的缓存头
 * `Cache-Control:max-age`：HTTP/1.1的缓存头
 
-注：`Expires`指定了资源过期的绝对时间，GMT格式，`Cache-Control:max-age`指定了资源过期的相对时间，单位是秒。在支持HTTP/1.1的浏览器上，如果发送两个头，那么Cache-Control: max-age会覆盖掉Expires； 
+注：`Expires`指定了资源过期的绝对时间，GMT格式，`Cache-Control:max-age`指定了资源过期的相对时间，单位是秒。在支持HTTP/1.1的浏览器上，如果发送两个头，那么Cache-Control: max-age会覆盖掉Expires；
 在支持HTTP/1.0的浏览器上，即使发送了两个头，但是只有Expires会起作用，所以为了兼容老的浏览器，还是要同时发送这两个头。
 
 ### 开启Apache缓存涉及的`expires`模块
@@ -24,6 +24,7 @@
 
     <IfModule mod_expires.c>
         ExpiresActive  On
+
         ExpiresDefault "access plus 10 days"
         ExpiresByType  image/x-icon "access plus 60 days"
         ExpiresByType  image/gif    "access plus 30 days"
@@ -31,6 +32,8 @@
         ExpiresByType  image/png    "access plus 30 days"
         ExpiresByType  text/css     "access plus 30 days"
         ExpiresByType  application/x-javascript  "access plus 30 days"
+        ExpiresByType  application/javascript    "access plus 30 days"
+        ExpiresByType  text/html                 "access plus 1 minutes"
     </IfModule>
 
 说明：
@@ -67,7 +70,7 @@
 
 1. 文字叙述型，如上配置所示。英文单词包括`years`、`months`、`weeks`、`days`、`hours`、`minutes`、`seconds`；
 2. 代码加上秒数型，如：`ExpiresByType image/png A604800`（A相当于access）。
-    
+
 起算时间有三种：
 
 * 分别是`access`、`now`、`modification`。

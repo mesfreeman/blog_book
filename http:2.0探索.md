@@ -148,7 +148,7 @@ http2.0在客户端和服务器端使用“首部表”来跟踪和存储之前�
 ## https的部署与配置
 
 部署与配置https，有两种方式：一种是使用自签名证书，另一种是使用第三方CA机构签署证书。第一种随便使用，只是没有经过官方认可的机构认证而已，因此浏览器无法自动识别其安全性，均会弹出警告。后一种则是正规的签名证书，有发证机构签名，浏览器能自动识别。
-    
+
 **自签名证书**
 ![QQ20170117-114906](http://blog.hequanxi.com/usr/uploads/2017/01/1204282968.jpg)
 
@@ -197,30 +197,30 @@ http2.0在客户端和服务器端使用“首部表”来跟踪和存储之前�
 #### 配置虚拟主机
 
     NameVirtualHost *:443
-    
+
     <VirtualHost *:443>
         SSLEngine on
         SSLCertificateFile /etc/apache2/ssl/bbs.pem
-        
+
         ServerName bbs.hequanxi.com
         ServerAdmin mesfreeman@126.com
         DocumentRoot /data/services/sites/bbs.hequanxi.com/web
         ErrorLog /data/services/sites/bbs.hequanxi.com/log/error.log
         CustomLog /data/services/sites/bbs.hequanxi.com/log/access.log combined
-        
+
         <Directory /data/services/sites/bbs.hequanxi.com/web>
             Options FollowSymLinks MultiViews
             AllowOverride All
             Require all granted
         </Directory>
      </VirtualHost>
-     
+
 #### 重启Apache
 
     sudo apache service apache2 restart
-    
+
 > 至此自签名https配置完成。不过一般不推荐使用这种，由于浏览器不能自动识别会给用户带来一定的错觉，极大的影响用户体验。
-    
+
 ### 二、使用第三方CA机构签署证书
 
 > 第三方CA机构有收费的也有免费的，下面就以免费的第三方CA机构 -- `Let's Encrypt` 来展示介绍。
@@ -243,7 +243,7 @@ Let's Encrypt提供了自己的签名生成工具 - [Certbot](https://certbot.ef
     DOMAINS="DNS:www.hequanxi.com,DNS:hequanxi.com"
     #ECC=TRUE
     #LIGHTTPD=TRUE
-    
+
 > 注：执行过程中会自动生成需要的 key 文件。其中 ACCOUNT_KEY 为账户密钥， DOMAIN_KEY 为域名私钥， DOMAIN_DIR 为域名指向的目录，DOMAINS 为要签的域名列表， 需要 ECC 证书时取消 #ECC=TRUE 的注释，需要为 lighttpd 生成 pem 文件时，取消 #LIGHTTPD=TRUE 的注释
 
 3) 运行脚本
@@ -287,12 +287,12 @@ Let's Encrypt提供了自己的签名生成工具 - [Certbot](https://certbot.ef
         SSLEngine on
         SSLCertificateFile /etc/apache2/letsencrypt-ssh/www.chained.crt
         SSLCertificateKeyFile /etc/apache2/letsencrypt-ssh/www.hequanxi.com.key
-        
+
         ServerName www.hequanxi.com
         ServerAdmin mesfreeman@126.com
-        
+
         // 省略了部分配置 ……
-        
+
     </VirtualHost>
 
 #### 重启Apache
@@ -306,11 +306,11 @@ Let's Encrypt提供了自己的签名生成工具 - [Certbot](https://certbot.ef
 说起开启apache的模块，你肯定会情不自禁的敲下如下命令：
 
     sudo a2enmod http2
-    
+
 不好意思，会报错的：
 
     ERROR: Module http2 does not exist!
-    
+
 不是说好了apache 2.4以后就内置http2.0协议的么？其实这个不怪apache，原因是因为Ubuntu是一个[LTS](http://www.cnblogs.com/yymn/p/4686322.html)版本，要以稳定为主，而mod_http2是试验性的，所以不给予加入。是不是想哭了，不过没关系，正所谓道高一尺、道高一丈，我们可以通过添加[PPA](http://www.onesl.com/web/smkj/2011040302.html)（个人软件集）来解决，如下：
 
     double@iZ28klb08jmZ:~$ sudo add-apt-repository ppa:ondrej/apache2
@@ -320,7 +320,7 @@ Let's Encrypt提供了自己的签名生成工具 - [Certbot](https://certbot.ef
     PLEASE READ: If you like my work and want to give me a little motivation, please consider donating: https://deb.sury.org/#donate
      More info: https://launchpad.net/~ondrej/+archive/ubuntu/apache2
     Press [ENTER] to continue or ctrl-c to cancel adding it
-    
+
     gpg: keyring `/tmp/tmpz44frzue/secring.gpg' created
     gpg: keyring `/tmp/tmpz44frzue/pubring.gpg' created
     gpg: requesting key E5267A6C from hkp server keyserver.ubuntu.com
@@ -336,7 +336,7 @@ Let's Encrypt提供了自己的签名生成工具 - [Certbot](https://certbot.ef
 
     sudo apt update
     sudo apt dist-upgrade
-    
+
 更新结束后，apache就会更新到最新版本，看我的：
 
     double@iZ28klb08jmZ:~$ apache2 -v
@@ -345,7 +345,7 @@ Let's Encrypt提供了自己的签名生成工具 - [Certbot](https://certbot.ef
 这时候看一下模块里面是不是就有`http2`模块了，接下来就是开启这个模块了：
 
     sudo a2enmod http2
-    
+
 ### 配置虚拟主机
 
 http2.0的配置区分http和https协议，如果你使用80端口（http）来访问你的网站，则配置如下：
@@ -354,18 +354,18 @@ http2.0的配置区分http和https协议，如果你使用80端口（http）来�
         Protocols h2c http/1.1
         ……
     </VirtualHost>
-    
+
 如果你使用443端口（https）来访问你的网站，则配置如下：
 
     <VirtualHost xxxx:443>
         Protocols h2 http/1.1
         ……
     </VirtualHost>
-    
+
 ### 重启Apache
 
     sudo apache2 restart
-    
+
 > 此时不出意外，就大功告成了！！！
 
 ## http2.0中需要改进或去掉的优化方式
