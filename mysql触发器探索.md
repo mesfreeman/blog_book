@@ -4,12 +4,14 @@ mysql触发器顾名思义，当触发器所在的表上出现指定的事件时
 
 在mysql中，触发器的语法如下：
 
-    CREATE TRIGGER trigger_name
-    trigger_time
-    trigger_event ON tb1_name
-    FOR EACH ROW
-    trigger_stmt
-    
+```sql
+CREATE TRIGGER trigger_name
+trigger_time
+trigger_event ON tb1_name
+FOR EACH ROW
+trigger_stmt
+```
+
 说明：
 
 * trigger_name：标识触发器名称，用户自行指定
@@ -27,17 +29,19 @@ mysql触发器顾名思义，当触发器所在的表上出现指定的事件时
 
 创建触发器，学生表有学生添加时自动更新班级表里的studentCount，如下
 
-    DELIMITER $$
-    CREATE TRIGGER trigger_student_insert
-    AFTER
-    INSERT ON student FOR EACH ROW
-    BEGIN
-    DECLARE c int;
-    SET c = (SELECT studentCount FROM class WHERE classId = new.classId);
-    UPDATE class SET studentCount = c +1 WHERE classId = new.classId;
-    END
-    $$
-    
+```sql
+DELIMITER \\
+CREATE TRIGGER trigger_student_insert
+AFTER
+INSERT ON student FOR EACH ROW
+BEGIN
+DECLARE c int;
+SET c = (SELECT studentCount FROM class WHERE classId = new.classId);
+UPDATE class SET studentCount = c +1 WHERE classId = new.classId;
+END;
+\\
+```
+
 说明：
 
 * `DELIMITER $$`：重新定义结束符，因为mysql默认的结束符是分号，可程序体里也要写分号，如果不重新定义，代码会在遇到分号时结束，出现错误
@@ -48,17 +52,24 @@ mysql触发器顾名思义，当触发器所在的表上出现指定的事件时
 
 查看所有触发器
 
-    SHOW TRIGGERS;
-    
+```sql
+SHOW TRIGGERS;
+```
+
 查看指定表触发器
 
-    SHOW TRIGGERS  FROM 库名 Like '表名';
-    
+```sql
+SHOW TRIGGERS  FROM 库名 Like '表名';
+```
+
 查看指定触发器
 
-    SELECT * FROM TRIGGERS WHERE TRIGGER_NAME = '触发器名称';
-    
-## 删除触发器
-    
-    DROP TRIGGER 触发器名称;
+```sql
+SELECT * FROM TRIGGERS WHERE TRIGGER_NAME = '触发器名称';
+```
 
+## 删除触发器
+
+```
+DROP TRIGGER 触发器名称;
+```

@@ -176,6 +176,12 @@ MySQL数据库是做为PHP程序猿最为常用的数据库，是一个基础。
 ### 导出数据表查询结果到文件
 
     mysql -uxxx -pxxx databaseName -e "SELECT * FROM tableName WHERE Id > 20;" > "a.txt"
+    或者：
+    SELECT * INTO OUTFILE 'a.txt' FROM tableName;
+
+### 通过文件导入表数据
+
+    LOAD DATA INFILE 'a.txt' INTO TABLE tableName;
 
 ## 表字段操作
 
@@ -220,3 +226,7 @@ MySQL里内置了很多函数，非常实用，熟练使用这些函数，能让
 `REPLACE()`函数，用于替换字段里的部分字段，如
 
     REPLACE(name, 'aaaa', '')
+
+`REGEXP` 正则匹配，如果想区分大小写可以在后面加上`BINARY`，如
+
+    SELECT * FROM tableName WHERE name REGEXP BINARY '^a';
