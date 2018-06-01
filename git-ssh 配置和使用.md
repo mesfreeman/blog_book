@@ -15,11 +15,11 @@
 
 连续3个回车。如果不需要密码的话。最后会得到两个文件：`id_rsa`和`id_rsa.pul`，即私钥和公钥。如下图：
 
-![生成密钥](http://blog.hequanxi.com/usr/uploads/2016/09/1940243662.png)
+![生成密钥](http://blog.dandy.fun/usr/uploads/2016/09/1940243662.png)
 
 如果不是第一次生成密钥，则选择`overwrite`。如下图：
 
-![第二次生成](http://blog.hequanxi.com/usr/uploads/2016/09/2480617211.png)
+![第二次生成](http://blog.dandy.fun/usr/uploads/2016/09/2480617211.png)
 
 ### 添加密钥到ssh-agent
 
@@ -32,13 +32,13 @@
 
     $ ssh-add .ssh/id_rsa
 
-![添加密钥](http://blog.hequanxi.com/usr/uploads/2016/09/4037310316.png)
+![添加密钥](http://blog.dandy.fun/usr/uploads/2016/09/4037310316.png)
 
 ### 登录Github，添加ssh
 
 把上面生成的`id_rsa.pub`文件里的内容复制到这里
 
-![添加ssh](http://blog.hequanxi.com/usr/uploads/2016/09/1576689016.png)
+![添加ssh](http://blog.dandy.fun/usr/uploads/2016/09/1576689016.png)
 
 ### 测试成功与否
 

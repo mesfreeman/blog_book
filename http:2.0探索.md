@@ -15,10 +15,10 @@ http2.0即超文本传输协议2.0，是下一代http协议。它的前世是htt
 http协议是一个非常成功的协议，诞生之初主要应用于web端内容获取，因此消息格式是实施简单性和可访问性的优化，而不是应用程序的性能。
 
 如：web应用，而不是web网页。以及多媒体和移动APP、多设备的支持、[SPA](https://www.zhihu.com/question/31782625)等
-![QQ20170114-110216](http://blog.hequanxi.com/usr/uploads/2017/01/1383467061.jpg)
+![QQ20170114-110216](http://blog.dandy.fun/usr/uploads/2017/01/1383467061.jpg)
 
 随着互联网的发展和web2.0的诞生，页面需要有更多的内容展示、排版更加精美、交互更加复杂，而如今的Web……
-![QQ20170114-110554](http://blog.hequanxi.com/usr/uploads/2017/01/1431128482.jpg)
+![QQ20170114-110554](http://blog.dandy.fun/usr/uploads/2017/01/1431128482.jpg)
 
 影响一个网络请求的因素主要有两个：带宽和延迟，随着网络带宽的不断提高，影响网络请求的就只剩下延迟了。而http1.0连接无法复用，因此导致每次请求都要经历三次握手和慢启动，延迟一直降不下来。后来http1.1增加了持久连接，对pc端的浏览器体验帮助很大，但对移动APP端成效不大，因为APP端的请求分散时间跨度相对较大。
 
@@ -74,13 +74,13 @@ http1.0与http1.1的弊端及应对方式：
 
 在二进制分帧层上，http2.0会将所有传输的消息分割为更小的消息和帧，并对它们采用二进制格式的编码，其中http1.x的首部信息会被封装到headers帧，而我们的requese body则封装到data帧里面。
 
-![QQ20170114-155638](http://blog.hequanxi.com/usr/uploads/2017/01/4082032387.jpg)
+![QQ20170114-155638](http://blog.dandy.fun/usr/uploads/2017/01/4082032387.jpg)
 
 #### 服务器推送
 
 服务器推送是http2.0新增的一个强大的新功能，是指在客户端请求之前发送数据的机制。比如当你请求一个主页时，服务器可能在响应主页请求的同时，还会额外的响应一些logo/img/css等，因为它知道客户端会用到这些东西。相当于**一个HTML文档内嵌了所有的资源**，不过与之相比，服务器推送有一个很大的优势：可惜缓存！
 
-![QQ20170116-100328](http://blog.hequanxi.com/usr/uploads/2017/01/2779728326.jpg)
+![QQ20170116-100328](http://blog.dandy.fun/usr/uploads/2017/01/2779728326.jpg)
 
 因此**内嵌资源**的优化手段就变成了多些一举了！
 
@@ -108,7 +108,7 @@ http1.0与http1.1的弊端及应对方式：
 
 虽然http2.0变成了单一TCP连接，但提供了并行双向字节流的请求和响应。在http2.0上，客户端和服务器可以把消息分解为互不依赖的帧，然后乱序发送，最后在另一端把它们重新组合。而且还可以一边发送一边响应。
 
-![QQ20170116-093746](http://blog.hequanxi.com/usr/uploads/2017/01/3662721514.jpg)
+![QQ20170116-093746](http://blog.dandy.fun/usr/uploads/2017/01/3662721514.jpg)
 
 因此**域名分区**的优化手段就变成了多此一举了！
 
@@ -118,19 +118,19 @@ http2.0在客户端和服务器端使用“首部表”来跟踪和存储之前�
 
 如果首部发生变化了，那么只需要发送变化了数据在Headers帧里面，新增或修改的首部帧会被追加到“首部表”。首部表在 http2.0的连接存续期内始终存在，由客户端和服务器共同渐进地更新。
 
-![QQ20170116-103728](http://blog.hequanxi.com/usr/uploads/2017/01/3840382976.jpg)
+![QQ20170116-103728](http://blog.dandy.fun/usr/uploads/2017/01/3840382976.jpg)
 
 ### 服务器及客户端支持情况
 
 #### Web Server Support
 
-![QQ20170116-113942](http://blog.hequanxi.com/usr/uploads/2017/01/3745318774.jpg)
+![QQ20170116-113942](http://blog.dandy.fun/usr/uploads/2017/01/3745318774.jpg)
 
 已支持大部分主流服务器，这里有一份详细的[HTTP/2服务器支持清单](https://github.com/http2/http2-spec/wiki/Implementations)。
 
 #### Client Support
 
-![QQ20170116-115644](http://blog.hequanxi.com/usr/uploads/2017/01/843655090.jpg)
+![QQ20170116-115644](http://blog.dandy.fun/usr/uploads/2017/01/843655090.jpg)
 
 
 主流客户端也已经纷纷支持，详情见[HTTP/2 protocol](http://caniuse.com/#feat=http2).
@@ -150,11 +150,11 @@ http2.0在客户端和服务器端使用“首部表”来跟踪和存储之前�
 部署与配置https，有两种方式：一种是使用自签名证书，另一种是使用第三方CA机构签署证书。第一种随便使用，只是没有经过官方认可的机构认证而已，因此浏览器无法自动识别其安全性，均会弹出警告。后一种则是正规的签名证书，有发证机构签名，浏览器能自动识别。
 
 **自签名证书**
-![QQ20170117-114906](http://blog.hequanxi.com/usr/uploads/2017/01/1204282968.jpg)
+![QQ20170117-114906](http://blog.dandy.fun/usr/uploads/2017/01/1204282968.jpg)
 
 **第三方CA机构签署证书**
 
-![QQ20170117-114906](http://blog.hequanxi.com/usr/uploads/2017/01/1996970808.jpg)
+![QQ20170117-114906](http://blog.dandy.fun/usr/uploads/2017/01/1996970808.jpg)
 
 ### 一、使用用自签名证书
 
@@ -202,13 +202,13 @@ http2.0在客户端和服务器端使用“首部表”来跟踪和存储之前�
         SSLEngine on
         SSLCertificateFile /etc/apache2/ssl/bbs.pem
 
-        ServerName bbs.hequanxi.com
+        ServerName bbs.dandy.fun
         ServerAdmin mesfreeman@126.com
-        DocumentRoot /data/services/sites/bbs.hequanxi.com/web
-        ErrorLog /data/services/sites/bbs.hequanxi.com/log/error.log
-        CustomLog /data/services/sites/bbs.hequanxi.com/log/access.log combined
+        DocumentRoot /data/services/sites/bbs.dandy.fun/web
+        ErrorLog /data/services/sites/bbs.dandy.fun/log/error.log
+        CustomLog /data/services/sites/bbs.dandy.fun/log/access.log combined
 
-        <Directory /data/services/sites/bbs.hequanxi.com/web>
+        <Directory /data/services/sites/bbs.dandy.fun/web>
             Options FollowSymLinks MultiViews
             AllowOverride All
             Require all granted
@@ -238,9 +238,9 @@ Let's Encrypt提供了自己的签名生成工具 - [Certbot](https://certbot.ef
 2）修改配置文件（只需要修改 DOMAIN_KEY DOMAIN_DIR DOMAINS 为你自己的信息）
 
     ACCOUNT_KEY="letsencrypt-account.key"
-    DOMAIN_KEY="www.hequanxi.com.key"
-    DOMAIN_DIR="/data/services/sites/www.hequanxi.com/web"
-    DOMAINS="DNS:www.hequanxi.com,DNS:hequanxi.com"
+    DOMAIN_KEY="www.dandy.fun.key"
+    DOMAIN_DIR="/data/services/sites/www.dandy.fun/web"
+    DOMAINS="DNS:www.dandy.fun,DNS:dandy.fun"
     #ECC=TRUE
     #LIGHTTPD=TRUE
 
@@ -250,7 +250,7 @@ Let's Encrypt提供了自己的签名生成工具 - [Certbot](https://certbot.ef
 
     ./letsencrypt.sh letsencrypt.conf
 
-> 注：需要已经绑定域名到`/data/services/sites/www.hequanxi.com/web`目录，即通过`http://www.hequanxi.com 或 http://hequanxi.com`可以访问到该目录，用于域名的验证。
+> 注：需要已经绑定域名到`/data/services/sites/www.dandy.fun/web`目录，即通过`https://dandy.fun 或 http://dandy.fun`可以访问到该目录，用于域名的验证。
 
 运行结果如下：
 
@@ -269,8 +269,8 @@ Let's Encrypt提供了自己的签名生成工具 - [Certbot](https://certbot.ef
     Parsing CSR...
     Registering account...
     Registered!
-    Verifying www.hequanxi.com...
-    www.hequanxi.com verified!
+    Verifying www.dandy.fun...
+    www.dandy.fun verified!
     Signing certificate...
     Certificate signed!
     New cert: www.chained.crt has been generated
@@ -286,9 +286,9 @@ Let's Encrypt提供了自己的签名生成工具 - [Certbot](https://certbot.ef
     <VirtualHost *:443>
         SSLEngine on
         SSLCertificateFile /etc/apache2/letsencrypt-ssh/www.chained.crt
-        SSLCertificateKeyFile /etc/apache2/letsencrypt-ssh/www.hequanxi.com.key
+        SSLCertificateKeyFile /etc/apache2/letsencrypt-ssh/www.dandy.fun.key
 
-        ServerName www.hequanxi.com
+        ServerName www.dandy.fun
         ServerAdmin mesfreeman@126.com
 
         // 省略了部分配置 ……
@@ -401,21 +401,21 @@ http2.0的配置区分http和https协议，如果你使用80端口（http）来�
 
 ### 测试https网站安全性
 
-配置好https之后最好对自己的网站进行一个全面的测试，来检查一下配置是否有遗漏的地方，这里有一个比较好用的网站 - [SSL Labs](https://www.ssllabs.com/ssltest/analyze.html)。我[网站的评测](https://www.ssllabs.com/ssltest/analyze.html?d=www.hequanxi.com)才是个`A-`。
+配置好https之后最好对自己的网站进行一个全面的测试，来检查一下配置是否有遗漏的地方，这里有一个比较好用的网站 - [SSL Labs](https://www.ssllabs.com/ssltest/analyze.html)。我[网站的评测](https://www.ssllabs.com/ssltest/analyze.html?d=www.dandy.fun)才是个`A-`。
 
-![QQ20170118-155809](http://blog.hequanxi.com/usr/uploads/2017/01/2953363752.jpg)
+![QQ20170118-155809](http://blog.dandy.fun/usr/uploads/2017/01/2953363752.jpg)
 
 ### http/1.x与http/2加载速度对比
 
 这里有一个网站Dome，对http/1.x与http/2加载速度做了一个对比 - [传送门](https://http2.akamai.com/demo)。
 
-![QQ20170118-161338](http://blog.hequanxi.com/usr/uploads/2017/01/4138689844.jpg)
+![QQ20170118-161338](http://blog.dandy.fun/usr/uploads/2017/01/4138689844.jpg)
 
 ### 如何识别网站开启了http2.0？
 
 谷歌浏览器内置的有http2.0查看器，在地址输入`chrome://net-internals/#http2`即可查到，也可以安装谷歌插件[HTTP/2 and SPDY indicator](https://chrome.google.com/webstore/detail/http2-and-spdy-indicator/mpbpobfflnpcgagjijhmgnchggcjblin)，如果网站使用了http/2，则图标会变颜色。
 
-![QQ20170118-162415](http://blog.hequanxi.com/usr/uploads/2017/01/3568844182.jpg)
+![QQ20170118-162415](http://blog.dandy.fun/usr/uploads/2017/01/3568844182.jpg)
 
 ## 参考文章
 

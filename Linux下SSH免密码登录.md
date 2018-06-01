@@ -7,7 +7,6 @@
 可以使用某些工具生成，也可以使用命令行生成，如下：
 
     ssh-keygen -t rsa # 连续三次回车，不需要设置密码，即可在本地生成公钥（id_rsa.pub）和私钥（id_rsa）
-    
 
 ## 在服务器上配置授权公钥
 
@@ -45,5 +44,5 @@
 
 ### 原理图
 
-![SSH免密码登录原理图](http://blog.hequanxi.com/usr/uploads/2017/03/4239003457.png)
+![SSH免密码登录原理图](http://blog.dandy.fun/usr/uploads/2017/03/4239003457.png)
 

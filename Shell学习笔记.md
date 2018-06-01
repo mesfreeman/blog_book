@@ -51,7 +51,7 @@ Shell 是一个用C语言编写的程序，它是用户使用Linux的桥梁。Sh
     echo $your_name
     echo "${your_name} very good !"
 
-#### 重定义变量 
+#### 重定义变量
 
     your_name="double.he"
     echo $your_name
@@ -83,7 +83,7 @@ Shell 是一个用C语言编写的程序，它是用户使用Linux的桥梁。Sh
     echo 'this is a single string' # 输出 this is a single string
     your_name="double.he"
     echo "Hello, I know your are \"$your_name\"! \n" # 输出 Hello, I know your are double.he!
-    
+
 #### 拼接字符串
 
     your_name="double.he"
@@ -121,7 +121,7 @@ Shell 是一个用C语言编写的程序，它是用户使用Linux的桥梁。Sh
     ${数组名[下标]}
 
     echo ${array_name[0]} # 输出 value0
-    
+
     echo ${array_name[@]} # 输出所有
 
     # 或者
@@ -133,7 +133,7 @@ Shell 是一个用C语言编写的程序，它是用户使用Linux的桥梁。Sh
     ${数组名[下标]}
 
     echo ${array_name[0]} # 输出 value0
-    
+
     echo ${array_name[@]} # 输出所有
 
 ### shell传递参数
@@ -166,7 +166,7 @@ Shell 是一个用C语言编写的程序，它是用户使用Linux的桥梁。Sh
 * `$?` - 显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误
 
 实例：
-    
+
     echo "\$# test $#"
     echo "\$* test $*"
     echo "\$\$ test $$"
@@ -182,7 +182,7 @@ Shell 是一个用C语言编写的程序，它是用户使用Linux的桥梁。Sh
     $# test 3
     $* test 1 2 3
     $$ test 10472
-    $! test 
+    $! test
     $@ test 1 2 3
     $- test hB
     $? test 0
@@ -307,7 +307,7 @@ Shell中的 test 命令用于检查某个条件是否成立，它可以进行数
     do
         command
     done
-   
+
 实例：
 
     a=1
@@ -366,7 +366,7 @@ Shell中的 test 命令用于检查某个条件是否成立，它可以进行数
 
 shell1.sh
 
-    url="blog.hequanxi.com"
+    url="blog.dandy.fun"
 
 shell2.sh
 

@@ -1,4 +1,4 @@
-说起`NProxy`不得不提起`Fiddler`，一款使用很广泛的网络抓包神器、静态资源重定向等众多功能与一身的神器，如果你还不晓得，请前去安利 --- [抓包利器Fiddler的使用](http://blog.hequanxi.com/index.php/archives/167)。
+说起`NProxy`不得不提起`Fiddler`，一款使用很广泛的网络抓包神器、静态资源重定向等众多功能与一身的神器，如果你还不晓得，请前去安利 --- [抓包利器Fiddler的使用](http://blog.dandy.fun/index.php/archives/167)。
 
 那么`NProxy`又是什么呢？它一个支持多平台的前端调试利器，功能类似于`Fiddler`的静态资源重定向的功能，能够将捕获网络请求指向本地文件，从而在本地完成对线上资源的调试。为什么不用`Fiddler`呢，因为`Fiddler`虽然功能很强大，但它只局限于windows平台，像Mac/Linux与它注定了无缘。
 
@@ -15,25 +15,25 @@ Nproxy的使用场景可分为两种情况：
 
 ### 安装
 
-Mac上安装Nproxy需要用到软件包管理工具 -- homebrew，如果你的Mac上还没有装，请移步 -- [Mac安装homebrew](http://blog.hequanxi.com/index.php/archives/192/)。有了它我们还需要先安装`node`，因为需要用到`node`的一个附带工具`npm`(即node package manager，用来搜索、下载、管理Node.js相关的套件)，安装过程很简单，只需要一条命令：
+Mac上安装Nproxy需要用到软件包管理工具 -- homebrew，如果你的Mac上还没有装，请移步 -- [Mac安装homebrew](http://blog.dandy.fun/index.php/archives/192/)。有了它我们还需要先安装`node`，因为需要用到`node`的一个附带工具`npm`(即node package manager，用来搜索、下载、管理Node.js相关的套件)，安装过程很简单，只需要一条命令：
 
     brew install node
-    
+
 等待安装结束，此时`npm`也会一起安装上，下面介绍一下它的简单使用：
 
     npm help    查看npm帮助
     npm find    查找组件
     npm install 安装组件
     npm remove  删除组件
-    
+
 第一次使用`npm`命令时会出现如下警告，忽略即可
 
     npm WARN Building the local index for the first time, please be patient
-    
+
 **准备工作**都做好了，下面就是安装`NProxy`了，同样也是一条命令：
 
     npm install -g nproxy
-    
+
 安装结束会看到`/usr/local/lib/node_modules/nproxy`目录多了很多文件。
 
 ### 使用
@@ -42,21 +42,21 @@ Mac上安装Nproxy需要用到软件包管理工具 -- homebrew，如果你的Ma
 
     // 新建配置文件(放在哪里都可以)
     vi replace-rule.js
-    
+
     module.exports = [
     	{
     		pattern: 'weitu.html', // 线上访问路径
     		responder: '/Users/double/Documents/codes/sophie-frontend/web/static/pages/weitu.html' // 本地映射文件路径
     	}
     ];
-    
+
 说明：当浏览器访问到`weitu.html`时重定向到本地`/Users/double/Documents/codes/sophie-frontend/web/static/pages/weitu.html`文件，即实际访问的是本地文件。
 
 第二步：启动`NProxy`
 
     nproxy -l replace-rule.js
     [INFO] NProxy started on 8989! // 说明已经对8989端口进行监听
-    
+
 第三步：设置浏览器代理
 
 这也最最关键的一个地方，设置本机为代码服务器监听上面的8989端口，从而所有本机发布的请求都通过代理过滤，这样便可以按照既定的规则将指定的路径转发至本地环境。配置浏览器本地代理环境有两种方法：
@@ -66,7 +66,7 @@ Mac上安装Nproxy需要用到软件包管理工具 -- homebrew，如果你的Ma
 
 小编配置参考（推荐这种方式）
 
-![switchyomega](http://blog.hequanxi.com/usr/uploads/2016/12/665344236.jpg)
+![switchyomega](http://blog.dandy.fun/usr/uploads/2016/12/665344236.jpg)
 
 ### 测试效果
 
@@ -74,7 +74,7 @@ Mac上安装Nproxy需要用到软件包管理工具 -- homebrew，如果你的Ma
 
     DoubledeMacBook-Pro:nproxy double$ nproxy -l replace-rule.js
     [INFO] NProxy started on 8989!
-    [INFO] matched url: http://double.super.hequanxi.com/weitu.html
-    [INFO] matched url: http://double.super.hequanxi.com/weitu.html
-    
+    [INFO] matched url: http://double.super.dandy.fun/weitu.html
+    [INFO] matched url: http://double.super.dandy.fun/weitu.html
+
 注意：要一直开着才可以哦

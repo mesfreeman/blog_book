@@ -1,4 +1,4 @@
-前段时间写的一个[VIP视频免费播](http://www.hequanxi.com/tool/ggvip.html)的网站，想在里面加一个百度分享的功能，却发现百度分享出来的链接地址是当前地址的，就想了个办法做分享之前获取当前URL地址并设置一个新URL地址给浏览器，于是就解决了百度分享的问题。在这个过程中了解到了`window.location`这个对象的一些使用方法，今记录如下～
+前段时间写的一个[VIP视频免费播](https://dandy.fun/tool/ggvip.html)的网站，想在里面加一个百度分享的功能，却发现百度分享出来的链接地址是当前地址的，就想了个办法做分享之前获取当前URL地址并设置一个新URL地址给浏览器，于是就解决了百度分享的问题。在这个过程中了解到了`window.location`这个对象的一些使用方法，今记录如下～
 
 ## 对象属性详细说明
 
@@ -15,12 +15,12 @@
 
 ### 使用实例
 
-假如目前的浏览器当前地址为：`http://blog.hequanxi.com:80/article/js-get-url.html?user=double#comment-1`
+假如目前的浏览器当前地址为：`http://blog.dandy.fun:80/article/js-get-url.html?user=double#comment-1`
 
     window.location.hash     // #comment-1
-    window.location.host     // blog.hequanxi.com:80
-    window.location.hostname // blog.hequanxi.com
-    window.location.href     // blog.hequanxi.com:80/article/js-get-url.html?user=double#comment-1
+    window.location.host     // blog.dandy.fun:80
+    window.location.hostname // blog.dandy.fun
+    window.location.href     // blog.dandy.fun:80/article/js-get-url.html?user=double#comment-1
     window.location.pathname // /article/js-get-url.html
     window.location.port     // 80
     window.location.protocol // http:
