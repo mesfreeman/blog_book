@@ -204,7 +204,7 @@ Shell 是一个用C语言编写的程序，它是用户使用Linux的桥梁。Sh
 
 下表列出了常用的算术运算符，假定变量 a 为 10，变量 b 为 20：
 
-![](http://oo5edb6t9.bkt.clouddn.com/14918083996091.jpg)
+![](https://pic.dandy.fun/14918083996091.jpg)
 
 注意：条件表达式要放在方括号之间，并且要有空格，例如: [$a==$b] 是错误的，必须写成 [ $a == $b ]
 
@@ -212,31 +212,31 @@ Shell 是一个用C语言编写的程序，它是用户使用Linux的桥梁。Sh
 
 下表列出了常用的关系运算符，假定变量 a 为 10，变量 b 为 20：
 
-![](http://oo5edb6t9.bkt.clouddn.com/14918084562619.jpg)
+![](https://pic.dandy.fun/14918084562619.jpg)
 
 #### 布尔运算符
 
 下表列出了常用的布尔运算符，假定变量 a 为 10，变量 b 为 20：
 
-![](http://oo5edb6t9.bkt.clouddn.com/14918084872137.jpg)
+![](https://pic.dandy.fun/14918084872137.jpg)
 
 #### 逻辑运算符
 
 以下介绍 Shell 的逻辑运算符，假定变量 a 为 10，变量 b 为 20:
 
-![](http://oo5edb6t9.bkt.clouddn.com/14918085082043.jpg)
+![](https://pic.dandy.fun/14918085082043.jpg)
 
 #### 字符串运算符
 
 下表列出了常用的字符串运算符，假定变量 a 为 "abc"，变量 b 为 "efg"：
 
-![](http://oo5edb6t9.bkt.clouddn.com/14918085270372.jpg)
+![](https://pic.dandy.fun/14918085270372.jpg)
 
 #### 文件测试运算符
 
 文件测试运算符用于检测 Unix 文件的各种属性：
 
-![](http://oo5edb6t9.bkt.clouddn.com/14918085483449.jpg)
+![](https://pic.dandy.fun/14918085483449.jpg)
 
 ### test命令
 

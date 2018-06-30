@@ -1,6 +1,6 @@
 ### 目录结构
 
-![目录结构](http://oo5edb6t9.bkt.clouddn.com/14918125570107.jpg)
+![目录结构](https://pic.dandy.fun/14918125570107.jpg)
 
 ### 详细说明
 

@@ -30,14 +30,14 @@
 
 实例2
 
-    for ($i = 0; $i < 5; $i ++) { 
-            $pid = pcntl_fork(); 
-            if (! $pid) { 
-                sleep(1); 
-                print "In child $i\n"; 
-                exit($i); 
-            } 
-        } 
+    for ($i = 0; $i < 5; $i ++) {
+            $pid = pcntl_fork();
+            if (! $pid) {
+                sleep(1);
+                print "In child $i\n";
+                exit($i);
+            }
+        }
 
 **`注意`**：千万千万不要忘记在子进程里写`exit`，否则会成指数式的产生子进程，服务器分分钟钟的搞死。
 
@@ -47,47 +47,47 @@
 
     // 建立数据库连接
     $conn = mysql_connect('127.0.0.1', 'root', 'root');
-    for ($i = 0; $i < 5; $i ++) { 
-            $pid = pcntl_fork(); 
-            if (!$pid) {  
+    for ($i = 0; $i < 5; $i ++) {
+            $pid = pcntl_fork();
+            if (!$pid) {
                 // 抓取到的数据
                 $data = …………
                 // 存入数据库
                 $sql = "…………";
                 mysql_query($sql, $conn);
-                print "Ok! \n"; 
-                exit($i); 
-            } 
-        } 
+                print "Ok! \n";
+                exit($i);
+            }
+        }
 
 **不好意思**，`MySQL server has gone away`，MySQL 不干了！！！
 
-![异常](http://oo5edb6t9.bkt.clouddn.com/14918121450717.jpg)
+![异常](https://pic.dandy.fun/14918121450717.jpg)
 
 **官方说法**是这样子的：当子进程任务完成并结束的时候，会自己关闭数据库连接，下一进程再进行数据库操作的时候发现失去了数据库连接，因为就出现了`MySQL server has gone away`的错误。详细说明 [MySQL server has gone away错误](http://php.net/manual/zh/function.pcntl-fork.php)
 
 官方也给出了解决实例，**`But`**是错的，我试了一下还是会现在上面的错误。已经无数次的折腾后，终于找到了解决的办法。
 
 解决方法
-  
-    for ($i = 0; $i < 5; $i ++) { 
-            $pid = pcntl_fork(); 
+
+    for ($i = 0; $i < 5; $i ++) {
+            $pid = pcntl_fork();
             // 建立数据库连接
             $conn = mysql_connect('127.0.0.1', 'root', 'root', true);
             if ($pid) {
             // 建立新的数据库连接
             $conn = mysql_connect('127.0.0.1', 'root', 'root', true);
-            } else if (! $pid) {  
+            } else if (! $pid) {
                 // 抓取到的数据
                 $data = …………
                 // 存入数据库
                 $sql = "…………";
                 mysql_query($sql, $conn);
-    
-                print "Ok! \n"; 
-                exit($i); 
-            } 
-        } 
+
+                print "Ok! \n";
+                exit($i);
+            }
+        }
 
 **只需注意两点**：
 

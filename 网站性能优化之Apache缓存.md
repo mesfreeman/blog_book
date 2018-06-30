@@ -46,7 +46,7 @@
 
 写入配置：
 
-![写入配置](http://oo5edb6t9.bkt.clouddn.com/14918135235940.jpg)
+![写入配置](https://pic.dandy.fun/14918135235940.jpg)
 
 ### 在`mod-enabled`目录建立软链接
 
@@ -56,11 +56,11 @@
 
 执行`sudo service apache2 restart`,当看到如下所示，表示服务器已重启。
 
-![](http://oo5edb6t9.bkt.clouddn.com/14918135989346.jpg)
+![](https://pic.dandy.fun/14918135989346.jpg)
 
 ### 测试开启是否成功
 
-![测试结果](http://oo5edb6t9.bkt.clouddn.com/14918136179135.png)
+![测试结果](https://pic.dandy.fun/14918136179135.png)
 
 由上图可以看出，该`css`文件被缓存了一个月，也就是上面配置时的30天，所以开启缓存成功。
 

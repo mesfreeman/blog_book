@@ -48,7 +48,7 @@
 
 说明：`alias`是自定义别名，脚本必须是全路径。
 
-![](http://oo5edb6t9.bkt.clouddn.com/14940398616167.jpg)
+![](https://pic.dandy.fun/14940398616167.jpg)
 
 > 以后我们就能在各个服务器里快速的切换了，go go go
 

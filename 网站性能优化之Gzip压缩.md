@@ -2,7 +2,7 @@
 
 gzip是HTML压缩算法的一种，HTTP压缩是在Web服务器和浏览器间传输压缩文本内容的方法。HTTP压缩工作原理是：
 
-1. Web服务器接收到浏览器的HTTP请求后，检查浏览器是否支持HTTP压缩； 
+1. Web服务器接收到浏览器的HTTP请求后，检查浏览器是否支持HTTP压缩；
 如果浏览器支持HTTP压缩，Web服务器检查请求文件的后缀名；
 2. 如果请求文件是HTML、CSS等静态文件，Web服务器到压缩缓冲目录中检查是否已经存在请求文件的最新压缩文件；
 3. 如果请求文件的压缩文件不存在，Web服务器向浏览器返回未压缩的请求文件，并在压缩缓冲目录中存放请求文件的压缩文件；
@@ -55,23 +55,23 @@ gzip是HTML压缩算法的一种，HTTP压缩是在Web服务器和浏览器间�
 
 执行`sudo service apache2 restart`,当看到如下所示，表示服务器已重启。
 
-![](http://oo5edb6t9.bkt.clouddn.com/14918140009313.jpg)
+![](https://pic.dandy.fun/14918140009313.jpg)
 
 ### 测试Gzip压缩是否开启成功
 
 随便访问一下该服务器下的网站，如果在网站的响应头里出现`Content-Encoding:gzip`则表示`Gzip`压缩开启成功，如下图所示：
 
-![](http://oo5edb6t9.bkt.clouddn.com/14918140247324.jpg)
+![](https://pic.dandy.fun/14918140247324.jpg)
 
 ### 测试效果
 
 * 网站未启动Gzip压缩
 
-![未压缩时](http://oo5edb6t9.bkt.clouddn.com/14918140444172.jpg)
+![未压缩时](https://pic.dandy.fun/14918140444172.jpg)
 
 * 网站启动Gzip压缩
 
-![](http://oo5edb6t9.bkt.clouddn.com/14918140726433.jpg)
+![](https://pic.dandy.fun/14918140726433.jpg)
 
 ### 扩展
 
