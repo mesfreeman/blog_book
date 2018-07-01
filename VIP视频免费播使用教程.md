@@ -1,4 +1,4 @@
-前段时间做了一个网站 - [VIP视频免费播](https://dandy.fun/tool/ggvip.html)，用于免费播放那些**需要会员**才能看的电视剧或电影，同时能**屏蔽掉视频广告**，方便了不少用户，从此再也不用到处买会员了～
+前段时间做了一个网站 - [VIP视频免费播](https://dandy.fun/tools/ggvip.html)，用于免费播放那些**需要会员**才能看的电视剧或电影，同时能**屏蔽掉视频广告**，方便了不少用户，从此再也不用到处买会员了～
 
 **注意：**并不能保证所以视频网站的会员都能破解，请自行尝试，目前以支持大部分主流视频网站～
 
@@ -20,7 +20,7 @@
 
 ### 第二：打开VIP视频免费播
 
-打开[VIP视频免费播](https://dandy.fun/tool/ggvip.html)网站：https://dandy.fun/tool/ggvip.html，将上面复制下来的视频链接地址粘贴到输入框内，点击立即播放即可，如下：
+打开[VIP视频免费播](https://dandy.fun/tools/ggvip.html)网站：https://dandy.fun/tools/ggvip.html，将上面复制下来的视频链接地址粘贴到输入框内，点击立即播放即可，如下：
 ![](http://blog.dandy.fun/usr/uploads/2017/02/3632457683.jpg)
 
 **看视频时间，是不是已经可以看全部的啦～**
@@ -40,7 +40,7 @@
 
 ### 第五：赞助
 
-如果你觉得[VIP视频免费播](https://dandy.fun/tool/ggvip.html)对您有所帮助，请点击网站上方[赞助](https://dandy.fun/tool/ggvip.html)，您的赞助能帮助网站更好的奔腾～，虽了表于心，但小编不胜感激，会在网站下方评论区写下您的大名^_^
+如果你觉得[VIP视频免费播](https://dandy.fun/tools/ggvip.html)对您有所帮助，请点击网站上方[赞助](https://dandy.fun/tools/ggvip.html)，您的赞助能帮助网站更好的奔腾～，虽了表于心，但小编不胜感激，会在网站下方评论区写下您的大名^_^
 
 ## 声明
 
